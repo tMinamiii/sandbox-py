@@ -1,0 +1,48 @@
+{
+  // "autoDocstring.docstringFormat": "google",
+  "python.linting.flake8Enabled": true,
+  "python.linting.lintOnSave": true,
+  "python.linting.pydocstyleEnabled": true,
+  "python.linting.pycodestyleEnabled": false,
+  "python.linting.pylintEnabled": false,
+  "python.linting.mypyEnabled": false,
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "python.analysis.disabled": [
+    "inherit-non-class"
+  ],
+  "editor.formatOnSave": false,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.jsxSingleQuote": true,
+  "prettier.jsxBracketSameLine": true,
+  "python.formatting.provider": "black",
+  "python.linting.pylintCategorySeverity.refactor": "Warning",
+  "python.linting.pylintCategorySeverity.convention": "Warning",
+  "python.linting.mypyCategorySeverity.note": "Warning",
+  "json.format.enable": true,
+  "beautify.ignore": [
+    "**/*"
+  ],
+  "python.venvFolders": [
+    ".venv"
+  ],
+  "python.pythonPath": ".venv/bin/python",
+  "terminal.integrated.env.linux": {},
+  "terminal.integrated.env.osx": {},
+  "python.sortImports.path": "isort",
+  "python.sortImports.args": [
+    "--settings-path=${workspaceFolder}/setup.cfg"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.mypy_cache": true,
+    "**/.pytest_cache": true,
+    "**/__pycache__": true,
+    "**/.venv": true
+  },
+}

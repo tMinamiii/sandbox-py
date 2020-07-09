@@ -1,0 +1,56 @@
+---
+version: "3.5"
+services:
+  elasticsearch:
+    hostname: elasticsearch
+    build: docker/elasticsearch
+    restart: always
+    tmpfs:
+      - "/usr/share/elasticsearch/data"
+    environment:
+      - discovery.type=single-node
+    ports:
+      - 9200:9200
+      - 9300:9300
+    networks:
+      - default
+  database:
+    hostname: database
+    image: mysql:8.0
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=passwd00
+      - MYSQL_USER=test
+      - MYSQL_PASSWORD=test
+    tmpfs:
+      - "/var/lib/mysql"
+    volumes:
+      - "./docker/database/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d"
+      - "./docker/database/my.cnf:/etc/mysql/conf.d/my.cnf"
+    ports:
+      - "23306:3306"
+    networks:
+      - default
+  flask-mock:
+    hostname: flask-mock
+    build: docker/flask-mock
+    restart: always
+    volumes:
+      - "./docker/flask-mock:/flask-mock"
+    ports:
+      - "15000:5000"
+    networks:
+      - default
+  fastapi-mock:
+    hostname: fastapi-mock
+    build: docker/fastapi-mock
+    restart: always
+    volumes:
+      - "./docker/fastapi-mock:/fastapi-mock"
+    ports:
+      - "18000:8000"
+    networks:
+      - default
+networks:
+  default:
+    name: sandbox-py
