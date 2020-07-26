@@ -62,6 +62,25 @@ class Material(Base):
         return f"id={self.id} name={self.name} description={self.description} comment={self.comment}"
 
 
+class UserReviewMaterial(Base):
+    __tablename__ = "user_review_materials"
+    __table_args__ = {
+        "mysql_engine": "InnoDB",
+        "mysql_charset": "utf8mb4",
+        "mysql_collate": "utf8mb4_general_ci",
+        "comment": "ユーザーレビューと商品の中間テーブル",
+    }
+    query: Query
+
+    user_review_id = Column(INTEGER, ForeignKey("user_reviews.id"), nullable=False, comment="ユーザーテーブルの主キー")
+    material_id = Column(INTEGER, ForeignKey("materials.id"), nullable=False, comment="商品テーブルの主キー")
+
+    created_at = Column(DATETIME, nullable=True, server_default=text("CURRENT_TIMESTAMP"), comment="作成日時")
+    updated_at = Column(
+        DATETIME, nullable=True, server_default=text("CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"), comment="更新日時"
+    )
+
+
 class UserReview(Base):
     __tablename__ = "user_reviews"
     __table_args__ = {
