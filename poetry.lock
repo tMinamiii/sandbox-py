@@ -242,7 +242,7 @@ pyflakes = ">=2.2.0,<2.3.0"
 
 [[package]]
 name = "flake8-bugbear"
-version = "20.1.4"
+version = "21.4.3"
 description = "A plugin for flake8 finding likely bugs and design problems in your program. Contains warnings that don't belong in pyflakes and pycodestyle."
 category = "dev"
 optional = false
@@ -251,6 +251,9 @@ python-versions = ">=3.6"
 [package.dependencies]
 attrs = ">=19.2.0"
 flake8 = ">=3.0.0"
+
+[package.extras]
+dev = ["coverage", "black", "hypothesis", "hypothesmith"]
 
 [[package]]
 name = "flask"
@@ -1263,7 +1266,7 @@ testing = ["jaraco.itertools", "func-timeout"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "2218df3e8d6708dd268a04d14ddf8d35529655c1aafb186185f8e4962f1e8a20"
+content-hash = "e7a15072ed9eb62edbe70e89d26b15120806ba9fdce6ed04c43060faf0c2465d"
 
 [metadata.files]
 alembic = [
@@ -1386,8 +1389,8 @@ flake8 = [
     {file = "flake8-3.8.3.tar.gz", hash = "sha256:f04b9fcbac03b0a3e58c0ab3a0ecc462e023a9faf046d57794184028123aa208"},
 ]
 flake8-bugbear = [
-    {file = "flake8-bugbear-20.1.4.tar.gz", hash = "sha256:bd02e4b009fb153fe6072c31c52aeab5b133d508095befb2ffcf3b41c4823162"},
-    {file = "flake8_bugbear-20.1.4-py36.py37.py38-none-any.whl", hash = "sha256:a3ddc03ec28ba2296fc6f89444d1c946a6b76460f859795b35b77d4920a51b63"},
+    {file = "flake8-bugbear-21.4.3.tar.gz", hash = "sha256:2346c81f889955b39e4a368eb7d508de723d9de05716c287dc860a4073dc57e7"},
+    {file = "flake8_bugbear-21.4.3-py36.py37.py38-none-any.whl", hash = "sha256:4f305dca96be62bf732a218fe6f1825472a621d3452c5b994d8f89dae21dbafa"},
 ]
 flask = [
     {file = "Flask-1.1.2-py2.py3-none-any.whl", hash = "sha256:8a4fdd8936eba2512e9c85df320a37e694c93945b33ef33c89946a340a238557"},
