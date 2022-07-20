@@ -14,5 +14,5 @@ class MaterialQuery:
         category_query = Q("term", categories__group="グループ名") & Q("term", categories__name="カテゴリ名")
 
         query = query & Q("nested", path="categories", query=category_query)
-        log.infor(str(query))
+        log.info(str(query))
         return query

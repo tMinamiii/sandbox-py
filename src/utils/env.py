@@ -14,3 +14,5 @@ LOG_LEVEL = os.environ.get("LOG_LEVEL", "")
 
 ELASTICSEARCH_HOST = os.environ.get("ELASTICSEARCH_HOST", "")
 ELASTICSEARCH_PORT = os.environ.get("ELASTICSEARCH_PORT", "")
+
+IS_PROD = os.environ.get("ENV") == 'production'

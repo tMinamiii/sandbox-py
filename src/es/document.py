@@ -4,10 +4,10 @@ from __future__ import annotations
 from typing import Any
 
 from elasticsearch_dsl import Date, Document, InnerDoc, Integer, Keyword, Long, Nested, Text, analyzer
-from utils import env
 
 from context import exception_handler
 from es.connection import esclient
+from utils import env
 
 INDEX_SETTINGS = (
     {"number_of_shards": 5, "number_of_replicas": 1}
